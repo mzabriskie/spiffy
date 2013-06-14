@@ -46,15 +46,15 @@
             },
             // submatch
             '|=': function (e, a) {
-                return e == a || a.indexOf(e + '-') == 0;
+                return e == a || a.indexOf(e + '-') === 0;
             },
             // prefix
             '^=': function (e, a) {
-                return a.indexOf(e) == 0;
+                return a.indexOf(e) === 0;
             },
             // suffix
             '$=': function (e, a) {
-                return a.indexOf(e) == (a.length - e.length);
+                return a.indexOf(e) === (a.length - e.length);
             },
             // contains
             '*=': function (e, a) {
@@ -82,9 +82,9 @@
                 if (attribute.operator && attribute.expected) {
                     return Attribute.Operators[attribute.operator](trim(attribute.expected), val);
                 } else {
-                    return val != null && val.length > 0;
+                    return val !== null && val.length > 0;
                 }
-            }
+            };
         }
     };
 
@@ -105,38 +105,38 @@
         },
         Methods: {
             'only-of-type': function (node) {
-                return Pseudo.Filters['only'](node, true);
+                return Pseudo.Filters.only(node, true);
             },
             'first-of-type': function (node) {
-                return Pseudo.Filters['nth'](node, 1, true);
+                return Pseudo.Filters.nth(node, 1, true);
             },
             'last-of-type': function (node) {
                 return Pseudo.Filters['nth-last'](node, 1, true);
             },
             'nth-of-type': function (node, param) {
-                return Pseudo.Filters['nth'](node, param, true);
+                return Pseudo.Filters.nth(node, param, true);
             },
             'nth-last-of-type': function (node, param) {
                 return Pseudo.Filters['nth-last'](node, param, true);
             },
             'only-child': function (node) {
-                return Pseudo.Filters['only'](node, false);
+                return Pseudo.Filters.only(node, false);
             },
             'first-child': function (node) {
-                return Pseudo.Filters['nth'](node, 1, false);
+                return Pseudo.Filters.nth(node, 1, false);
             },
             'last-child': function (node) {
                 return Pseudo.Filters['nth-last'](node, 1, false);
             },
             'nth-child': function (node, param) {
-                return Pseudo.Filters['nth'](node, param, false);
+                return Pseudo.Filters.nth(node, param, false);
             },
             'nth-last-child': function (node, param) {
                 return Pseudo.Filters['nth-last'](node, param, false);
             },
             'empty': function (node) {
                 var children = getChildren(node);
-                return !children || children.length == 0;
+                return !children || children.length === 0;
             },
             'enabled': function (node) {
                 return !node.disabled;
@@ -163,7 +163,7 @@
         createFilter: function (pseudo) {
             return function (node) {
                 return Pseudo.Methods[pseudo.name](node, trim(pseudo.param));
-            }
+            };
         }
     };
 
@@ -362,7 +362,7 @@
             // Determine category and key
             if (typeof last.ID !== 'undefined') {
                 result.category = 'id';
-                result.key = last.ID
+                result.key = last.ID;
             } else if (typeof last.classes !== 'undefined') {
                 result.category = 'class';
                 result.key = last.classes[0];
