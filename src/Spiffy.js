@@ -463,14 +463,12 @@
         }
     };
 
-    if (typeof define === 'function' && typeof define.amd == 'object' && define.amd) {
+    if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
         define('Spiffy', [], function() { return Spiffy; });
     } else if (typeof module !== 'undefined') {
         module.exports = Spiffy;
-    } else if (typeof window !== 'undefined') {
-        window.Spiffy = Spiffy;
     } else {
         this.Spiffy = Spiffy;
     }
 
-})();
+}).call(this);
