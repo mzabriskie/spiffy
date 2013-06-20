@@ -8,6 +8,9 @@
         "type": "git",
         "url": "https://github.com/mzabriskie/spiffy.git"
     },
+    "scripts": {
+        "test": "nodeunit ./test"
+    },
     "devDependencies": {
         "grunt": "~0.4.0",
         "grunt-contrib-copy": "0.4.1",
