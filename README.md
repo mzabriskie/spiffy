@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mzabriskie/spiffy.png?branch=master)](https://travis-ci.org/mzabriskie/spiffy)
+
 spiffy
 ======
 
