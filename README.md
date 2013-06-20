@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/mzabriskie/spiffy.png?branch=master)](https://travis-ci.org/mzabriskie/spiffy)
-
-spiffy
+spiffy [![Build Status](https://travis-ci.org/mzabriskie/spiffy.png?branch=master)](https://travis-ci.org/mzabriskie/spiffy)
 ======
 
 CSS3 Selector Tool for JavaScript
