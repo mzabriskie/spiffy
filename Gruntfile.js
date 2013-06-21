@@ -28,5 +28,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['jshint', 'nodeunit', 'uglify', 'copy']);
+    grunt.registerTask('default', ['jshint', 'nodeunit']);
+    grunt.registerTask('publish', ['uglify', 'copy']);
 };
