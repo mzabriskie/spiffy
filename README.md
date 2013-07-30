@@ -15,7 +15,7 @@ Spiffy started out as an academic exercise to better understand CSS3 selectors. 
 
 The current version of Spiffy provides the ability to:
 
-- parse a selector to get details information about the selector
+- parse a selector to get detailed information about the selector
 - explain a selector to understand it's category, key and specificity
 - match an element to a selector
 
@@ -77,3 +77,7 @@ if (Spiffy.match(element, '#foo.bar')) {
 	alert('match found!');
 }
 ```
+
+## License
+
+Spiffy is released under the MIT license.
